@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block content%}
+{% include 'players/nav.html' %}
+
+<div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Settings</h3>
+              </div>
+
+              
+            </div>
+
+            <div class="clearfix"></div>
+
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Change Diffrent Settings</h2>
+
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+                         <!-- start accordion -->
+ <div class="col-md-12">
+    <div class="x_panel">
+                  
+  <div class="x_content">
+
+                    <!-- start accordion -->
+<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <div class="panel">
+    <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <h4 class="panel-title">Stuff</h4>
+      
+    </a>
+    <br>
+    <a href="{% url 'accounts:register' %}" class="btn btn-round btn-success  btn-xs"> 
+    <i class="fa fa-plus"></i> Add New Stuff</a>
+     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+
+              {% if report %}
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Created</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+        <tbody>
+        <tr>
+          <td></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+
+           
+          <td>
+            <a href="#"  class="btn btn-round btn-primary  btn-xs">Update</a>
+            <a class="btn btn-round btn-warning btn-xs" > Reset </a>
+
+            <a href="#" class="btn btn-round btn-danger btn-xs" onclick="return confirm('Remove content?');">Delete</a>
+          </td>
+            
+          </tr>
+
+        </tbody>
+      </table>
+
+
+  {% else %}
+    <p><strong>No Stuff Available.</strong></p>
+{% endif %}
+
+    </div>
+  </div>
+</div>
+                 
+       
+                      
+                    
+
+
+
+<div class="panel">
+<a class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+    <h4 class="panel-title">List Of Clubs </h4>
+
+</a>
+<br>
+<a href="{% url 'players:new_club' %}" class="btn btn-round btn-success  btn-xs"> <i class="fa fa-plus"></i> Add New Club</a>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+
+{% if clubs %}
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Coach</th>
+                <th>Contact</th>
+                <th>Team Manager</th>
+                <th>Contact</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+ {% for c in clubs%}
+        <tr>
+         
+          <td> {{c.id}} </td>
+          <td>{{ c.name }} </td>
+          <td> {{ c.coach_name }} </td>
+          <td> {{ c.coach_contact }} </td>
+          <td> {{ c.team_manager }} </td>
+          <td> {{ c.team_manager_contact }} </td>
+          <td>
+            <a href="{% url 'players:edit_club' c.id %}"   class="btn btn-round btn-primary  btn-xs">Update</a>
+
+            <a href="#" class="btn btn-round btn-danger btn-xs" onclick="return confirm('Remove content?');">Delete</a>
+          </td>
+            
+          </tr>
+{%  endfor %}
+        </tbody>
+      </table>
+
+
+  {% else %}
+    <p><strong>No Clubs Are Available.</strong></p>
+{% endif %}
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel">
+
+<a class="panel-heading collapsed" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+     <h4 class="panel-title">High Schools</h4>
+ </a>
+
+ <br>
+ <a href="{% url 'players:new_school' %}" class="btn btn-round btn-success  btn-xs" > <i class="fa fa-plus"></i> Add New School</a>
+ 
+   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div class="panel-body">
+
+   {% if schools %}
+   	
+      <table class="table table-striped">
+        <thead>
+
+          <tr>
+            
+            <th>No</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Patron</th>
+            <th>Contact</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+{% for s in schools %}
+
+        <tr>
+          
+          <td>{{ s.id }} </td>
+          <td>{{ s.name }} </td>
+          <td>{{ s.location }} </td>
+          <td>{{ s.patron }} </td>
+          <td>{{ s.patron_contact }} </td>
+          <td>
+            <a href="{% url 'players:edit_school' s.id %}" class="btn btn-round btn-primary  btn-xs">Update</a>
+            <a href="#" class="btn btn-round btn-danger  btn-xs" onclick="return confirm('Remove content?');">Delete</a>
+          </td>
+          
+        </tr>
+     {% endfor %}
+
+        </tbody>
+      </table>
+
+  {% else %}
+    <p><strong>No High Schools are available .</strong></p>
+{% endif %}
+
+    </div>
+  </div>
+</div>
+  
+                    
+</div>
+
+                    <!-- end of accordion -->
+    </div>
+  </div>
+</div>
+           
+
+
+
+                     
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+
+
+{% endblock %}

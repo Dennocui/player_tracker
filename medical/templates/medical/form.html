@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content%}
+{% include 'players/nav.html' %}
+
+<div class="right_col" role="main">
+     
+          <div class="row">
+            <div class="col-md-11 ">
+              <div class="x_panel">
+                <a href="{% url 'medical:players' %}" class="btn btn-success">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                        Back </a> 
+     <div class="x_content">
+                   
+<form class="horizontal-form" method="POST" >
+    {% csrf_token %}
+
+          <div class="form-body">   
+          <!--START OF PLAYER BIO DATA-->
+          <h3 class="form-section"><u>Injury Report </u></h3>
+
+      <div class= "row">
+          <div class="col-md-6">
+              <div class="form-group">
+                <label>Select Player</label>
+                {{ form.player }}
+              </div>
+            </div>
+          </div>
+
+<div class="row">
+           <div class="col-md-4">
+              <div class="form-group">
+                <label>Injury Type</label>
+                {{ form.injury_type }}
+              </div>
+            </div>
+
+          <div class="col-md-4">
+            <label>Injury Date</label>
+                 <div class='input-group date' id='myDatepicker'>
+                  
+                  {{ form.injury_date }}
+                  <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+          </div>
+        
+
+
+          <div class="col-md-4">
+            <label>Recovery Date</label>
+            <div class='input-group date' id='myDatepicker2'>
+              
+                {{ form.recovery_date }}
+                <span class="input-group-addon">
+                   <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+</div>
+<div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                <label>Injury Comments</label>
+              {{ form.injury_comments }}
+              </div>
+            </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>S & C Notes</label>
+            {{ form.conditioning_notes }}
+              </div>
+          </div>
+
+ </div>
+
+
+        
+
+          
+          <br>               
+      <div class="row">            
+<div class="form-actions right">
+  <a href="{% url 'medical:players' %}"  class="btn btn-primary">Cancel</a>
+  <button type="submit" class="btn btn-success" name="btn_save" value="Save">Save</button>
+</div>
+</div>
+</div>
+          </form>
+
+         </div>
+        </div>
+       </div>
+     </div>
+  </div>
+
+{% endblock %}
+

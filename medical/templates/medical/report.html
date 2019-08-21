@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content%}
+{% include 'players/nav.html' %}
+
+<div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Medical Reports for: {{ report.player }} <small></small></h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+           
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="clearfix"></div>
+
+              <div class="col-md-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <a href="{% url 'medical:players' %}" class="btn btn-success">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                        Back </a>                    
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+<div class="table-responsive">
+  {% if report %}
+
+  <table class="table table-striped jambo_table bulk_action">
+    <thead>
+      <tr class="headings">
+
+        <th class="column-title">Date </th>
+        <th class="column-title">Injury Type</th>
+        <th class="column-title">Recovery Date</th>
+        <th class="column-title">Comments</th>
+        <th class="column-title">Conditioning</th>
+              
+        <th class="column-title no-link last"><span class="nobr"></span></th>
+        
+        
+      </tr>
+    </thead>
+
+    <tbody>
+{% for r in report %}
+      <tr class="even pointer">
+        <td class=" "> {{ r.injury_date }} </td>
+        <td class=" "> {{ r.injury_type }} </td>
+        <td class=" "> {{ r.recovery_date }} </td>
+        <td class=" "> {{ r.injury_comments }} </td>
+        <td class=" "> {{ r.conditioning_notes }} </td>
+        
+
+        <td class=" last"><a href="{% url 'medical:edit' r.id %}" class="btn btn-round btn-success btn-xs ">Edit</a>
+        </td>
+{% endfor %}
+        
+
+      </tr>
+     
+     </tbody>
+
+
+
+  </table>
+   {% else %}
+    <p><strong>No Reports are available for the player.</strong></p>
+{% endif %}
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

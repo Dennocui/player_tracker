@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>KRU Player Tracker </title>
+    
+    <!-- Bootstrap -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link href="{% static 'custom.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+ 
+
+      <div class="login_wrapper">
+       <div class="row"> 
+          <section class="login_content">
+
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+           
+
+    <form action="" method="post" >
+        {% csrf_token %}
+
+          <div class="from-group">
+          <input type="text" name="username"  placeholder="Enter Username"  class="form-control"  />
+          </div>
+
+          <div class="from-group">
+          <input type="password" name="password"  placeholder="Enter Password" class="form-control"  />
+          </div>
+  
+          <div class="from-group">
+          <input type="submit" name="login" value="login" class="btn btn-default submit"  />
+          </div>
+
+
+
+</form>
+
+              
+                <div>
+                  <h1><i class="fa fa-paw"></i> KRU player Tracker</h1>
+                  <p>©2018 All Rights Reserved.  Privacy and Terms</p>
+                </div>
+              </div>
+           
+          </section>
+        </div>
+</div>
+        
+
+      
+    </div>
+    
+  </body>
+</html>

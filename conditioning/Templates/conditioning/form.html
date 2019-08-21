@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block content%}
+{% include 'players/nav.html' %}
+
+<div class="right_col" role="main">
+   
+        <div class="">
+            <div class="page-title">
+            <div class="title_left">
+            <h3>New Conditioning Report <small></small></h3>
+        </div>
+                 
+        </div>
+     
+        <br>
+      
+        <div class="clearfix"></div>
+
+        <div class="row">
+      
+        <div class="clearfix"></div>
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                                               
+                     <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+<form class="horizontal-form" method="POST">
+	{% csrf_token %}
+<div class="form-body">   
+<!--START OF PLAYER BIO DATA-->
+<h3 class="form-section"><u>Conditioning Stats</u> </h3>
+<div class="row">
+	<div class="col-md-2">
+            <div class="form-group">
+              <label>Select Player</label>
+              {{ form.player }}
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+
+
+  <h4 class="form-section">Basic</h4>
+         <div class="col-md-2">
+            <div class="form-group">
+              <label>1 Rm Bench</label>
+              {{ form.bench }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>3 Rm Squats</label>
+              {{ form.squats }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+            <label> V Jumps</label>
+            {{ form.v_jumps }}
+            </div>
+        </div>
+       <div class="col-md-2">
+            <div class="form-group">
+              <label>H Jumps</label>
+            {{ form.h_jumps }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>1st Yoyo</label>
+            {{ form.yoyo }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>T test Right</label>
+            {{ form.t_test_right }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>T test Left</label>
+           {{ form.t_test_left }}
+            </div>
+        </div>
+</div>
+
+
+<div class="row">
+        <h4 class="form-section">Anthropometic Measures </h4>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>Chest</label>
+            {{ form.chest }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>Bicep</label>
+            {{ form.bicep }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>Waist</label>
+            {{ form.waist }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>Hip</label>
+            {{ form.hip }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>Thigh</label>
+            {{ form.thigh }}
+            </div>
+        </div>
+</div>
+
+ <div class="row">
+       <h4 class="form-section">Sprints </h4>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>10(M)</label>
+            {{ form.m10 }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>40(M)</label>
+            {{ form.m40 }}
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+              <label>60(M)</label>
+            {{ form.m60 }}
+            </div>
+        </div>
+  </div>
+
+<div class="row">
+  <h4 class="form-section">Obersvations </h4>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label>What to work on </label>
+            {{ form.conditioning_notes }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label>Type Of Suppliment taken</label>
+            {{ form.suppliment_taken }}
+            </div>
+        </div>
+        
+  
+
+
+</div>
+<br>
+<div class="row">
+	<div class="form-actions right">
+  <a href="{% url 'conditioning:players' %}"  class="btn btn-primary">Cancel</a>
+  <button type="submit" class="btn btn-success" name="btn_save" value="Save">Save</button>
+</div>
+</div>
+
+
+</div>
+</form>
+        
+
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+{% endblock %}

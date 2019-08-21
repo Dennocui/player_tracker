@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/ico" />
+
+<title>Rugby Tracker  </title>
+
+<!-- Bootstrap -->
+<link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+<!-- NProgress -->
+
+<!-- iCheck -->
+<link href="{% static 'vendors/iCheck/skins/flat/green.css' %}" rel="stylesheet">
+
+<!-- bootstrap-progressbar -->
+<link href="{% static 'vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet">
+<!-- JQVMap -->
+<link href="{% static 'vendors/jqvmap/dist/jqvmap.min.css' %}" rel="stylesheet"/>
+<!-- bootstrap-daterangepicker -->
+<link href="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="{% static '/build/css/custom.min.css' %}" rel="stylesheet">
+
+<!-- bootstrap-daterangepicker -->
+<link href="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+<!-- bootstrap-datetimepicker -->
+<link href="{% static 'vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css' %}" rel="stylesheet">
+
+
+<!-- Datatables -->
+<link href="{% static 'vendors/datatables.net-bs/css/dataTables.bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css' %}" rel="stylesheet">
+
+<!-- bootstrap-wysiwyg -->
+<link href="{% static 'vendors/google-code-prettify/bin/prettify.min.css' %}" rel="stylesheet">
+<!-- Select2 -->
+<link href="{% static '/vendors/select2/dist/css/select2.min.css' %}" rel="stylesheet">
+<!-- Switchery -->
+<link href="{% static '/vendors/switchery/dist/switchery.min.css' %}" rel="stylesheet">
+<!-- starrr -->
+<link href="{% static 'vendors/starrr/dist/starrr.css' %}" rel="stylesheet">
+<!-- bootstrap-daterangepicker -->
+<link href="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
+<!-- Full calender -->
+<link href="{% static 'css/fullcalendar.min.css' %}" rel="stylesheet">
+<!--SCRIPTS-->
+
+
+</head>
+
+
+        <!-- /top navigation -->
+
+
+    
+
+
+    
+            {% block  content %}
+            
+         
+            {% endblock %} 
+
+
+            
+
+        
+        
+
+<!-- footer content -->
+<footer>
+        <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'vendors/nprogress/nprogress.js' %}"></script>
+    <!-- Chart.js -->
+    <script src="{% static 'vendors/Chart.js/dist/Chart.min.js' %}"></script>
+    
+    <!-- gauge.js -->
+    <script src="{% static 'vendors/gauge.js/dist/gauge.min.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{% static 'vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <!-- iCheck -->
+    <script src="{% static 'vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- Skycons -->
+    <script src="{% static 'vendors/skycons/skycons.js' %}"></script>
+    <!-- Flot -->
+    <script src="{% static 'vendors/Flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'vendors/Flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static 'vendors/Flot/jquery.flot.time.js' %}"></script>
+    <script src="{% static 'vendors/Flot/jquery.flot.stack.js' %}"></script>
+    <script src="{% static 'vendors/Flot/jquery.flot.resize.js' %}"></script>
+    <!-- Flot plugins -->
+    <script src="{% static 'vendors/flot.orderbars/js/jquery.flot.orderBars.js' %}"></script>
+    <script src="{% static 'vendors/flot-spline/js/jquery.flot.spline.min.js' %}"></script>
+    <script src="{% static 'vendors/flot.curvedlines/curvedLines.js' %}"></script>
+    <!-- DateJS -->
+    <script src="{% static 'vendors/DateJS/build/date.js' %}"></script>
+    <!-- JQVMap -->
+    <script src="{% static 'vendors/jqvmap/dist/jquery.vmap.js' %}"></script>
+    <script src="{% static 'vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+    <script src="{% static 'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{% static 'vendors/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{% static 'vendors/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <!-- bootstrap-datetimepicker -->    
+    <script src="{% static 'vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js' %}"></script>
+
+    <!-- Datatables -->
+    <script src="{% static 'vendors/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-buttons/js/buttons.flash.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-keytable/js/dataTables.keyTable.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-scroller/js/dataTables.scroller.min.js' %}"></script>
+    <script src="{% static 'vendors/jszip/dist/jszip.min.js' %}"></script>
+    <script src="{% static 'vendors/pdfmake/build/pdfmake.min.js' %}"></script>
+    <script src="{% static 'vendors/pdfmake/build/vfs_fonts.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'build/js/custom.min.js' %}"></script>
+
+    
+    <!-- bootstrap-wysiwyg -->
+    <script src="{% static 'vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js' %}"></script>
+    <script src="{% static 'vendors/jquery.hotkeys/jquery.hotkeys.js' %}"></script>
+    <script src="{% static 'vendors/google-code-prettify/src/prettify.js' %}"></script>
+    <!-- jQuery Tags Input -->
+    <script src="{% static '/vendors/jquery.tagsinput/src/jquery.tagsinput.js' %}"></script>
+    <!-- Switchery -->
+    <script src="{% static 'vendors/switchery/dist/switchery.min.js' %}"></script>
+    <!-- Select2 -->
+    <script src="{% static 'vendors/select2/dist/js/select2.full.min.js' %}"></script>
+    <!-- Parsley -->
+    <script src="{% static 'vendors/parsleyjs/dist/parsley.min.js' %}"></script>
+    <!-- Autosize -->
+    <script src="{% static 'vendors/autosize/dist/autosize.min.js' %}"></script>
+    <!-- jQuery autocomplete -->
+    <script src="{% static 'vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js' %}"></script>
+    <!-- starrr -->
+    <script src="{% static 'vendors/starrr/dist/starrr.js' %}"></script>
+
+    <!-- full calender -->
+    <script src="{% static 'js/fullcalendar.min.js' %}"></script>
+    <script src="{% static 'js/gcal.js' %}"></script>
+
+    <script src="{% static 'js/highcharts.js' %}"></script>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+<!-- Script untuk memanggil library Highcharts -->
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Count Per Position'
+        },
+        xAxis: {
+            categories: {{ positions|safe }}
+        },
+        series: [{
+            name: 'Player Count',
+            data: {{ player_series_data }},
+            color: 'green'
+        }]
+    });
+  </script>
+   
+
+  <script>
+  Highcharts.chart('container1', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Count Per Position'
+      },
+      xAxis: {
+          categories: {{ clubs|safe }}
+      },
+      series: [{
+          name: 'Player Count',
+          data: {{ player_data }},
+          color: 'blue'
+      }]
+  });
+</script>
+    
+    
+    
+    
+    
+    <script type="text/javascript">
+    var date_last_clicked = null;
+    
+    $('#calendar').fullCalendar({
+        
+        eventSources: [
+        {
+            events: function(start, end, timezone, callback) {
+                $.ajax({
+                    url: '<?php echo base_url() ?>admin/get_events',
+                    dataType: 'json',
+                    data: {                
+                        start: start.unix(),
+                        end: end.unix()
+                    },
+                    success: function(msg) {
+                        var events = msg.events;
+                        callback(events);
+                    }
+                });
+           }
+        },
+        ],
+        dayClick: function(date, jsEvent, view) {
+            date_last_clicked = $(this);
+            $(this).css('background-color', '#bed7f3');
+            $('#addModal').modal();
+        },
+        eventClick: function(event, jsEvent, view) {
+              $('#name').val(event.title);
+              $('#description').val(event.description);
+              $('#start_date').val(moment(event.start).format('YYYY-MM-DD HH:mm'));
+              if(event.end) {
+                $('#end_date').val(moment(event.end).format('YYYY-MM-DD HH:mm'));
+              } else {
+                $('#end_date').val(moment(event.start).format('YYYY-MM-DD HH:mm'));
+              }
+              $('#event_id').val(event.id);
+              $('#editModal').modal();
+    },
+    });
+    </script>
+
+    
+    <!--CALENDER DATE PICKER-->
+    <script type="text/javascript">
+        $('#myDatepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+            
+        });
+    </script>
+    
+    <script type="text/javascript">
+        $('#myDatepicker3').datetimepicker({
+            format: 'YYYY-MM-DD H:mm'
+            
+        });
+    </script>
+    
+    <!--END CALENDER DATE PICKER-->
+    
+    <script>
+        var dt = new Date();
+        dt.setFullYear(new Date().getFullYear()-18);
+        
+        $('#myDatepicker2').datetimepicker({
+            format: 'YYYY-MM-DD'
+            
+        });
+    
+    </script>
+    
+     <script>
+        var dt = new Date();
+        dt.setFullYear(new Date().getFullYear()-18);
+        
+        $('#myDatepicker3').datetimepicker({
+            format: 'YYYY-MM-DD'
+            
+        });
+    
+    </script>
+    
+    
+    <!--VIEW PLAYER  PROFILE IN THE ADMIN  PANEL-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#viewPlayer', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic-content').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic-content').html('');    
+                $('#dynamic-content').html(data); // load response 
+                $('#modal-loader').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic-content').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script>
+    <!--END OF SHOW PLAYERS-->  
+    
+    <!--EDIT PLAYER PROFILE-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#getPlayer', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic-contents').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '<?php echo base_url() ?>admin/load_modal_data',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic-contents').html('');    
+                $('#dynamic-contents').html(data); // load response 
+                $('#modal-loader').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic-contents').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script>    
+    <!--END OF EDIT PLAYER -->
+    
+    <!--ADD NEW Medic REPORT-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#addMedicReport', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic-contents').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '<?php echo base_url() ?>medic/new_report',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic-contents').html('');    
+                $('#dynamic-contents').html(data); // load response 
+                $('#modal-loader').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic-contents').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script>
+    <!--END OF MEDIC ADD REPORT-->
+    
+    <!--VIEW  MEDIC REPORT-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#ViewMedicReport', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic-content').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '<?php echo base_url() ?>medic/view_report',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic-content').html('');    
+                $('#dynamic-content').html(data); // load response 
+                $('#modal-loader').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic-content').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script>
+    <!--END OF MEDIC VIEW  REPORT-->
+    
+    
+    <!--VIEW  MEDIC REPORT-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#EditMedicReport', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '<?php echo base_url() ?>medic/get_report',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic').html('');    
+                $('#dynamic').html(data); // load response 
+                $('#modal').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script>
+    <!--END OF MEDIC VIEW  REPORT-->
+    
+    
+    
+    <!--UPDATE MEDIC REPORT-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#UpdateMedicReport', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic-content').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '<?php echo base_url() ?>medic/load_player_medic',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic-content').html('');    
+                $('#dynamic-content').html(data); // load response 
+                $('#modal-loader').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic-content').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script>
+    <!--END OF MEDIC UPDATE  REPORT-->
+    
+    
+    
+    <!--ADD NEW SNC REPORT-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#addReport', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic-content').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '<?php echo base_url() ?>snc/new_report',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic-content').html('');    
+                $('#dynamic-content').html(data); // load response 
+                $('#modal-loader').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic-content').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script>
+    <!--END OF SNC ADD REPORT-->
+    
+    <!--VIEW PLAYER SNC REPORT-->
+    <script>
+    $(document).ready(function(){
+        
+        $(document).on('click', '#viewReport', function(e){
+            
+            e.preventDefault();
+            
+            var uid = $(this).data('id');   // it will get id of clicked row
+            
+            $('#dynamic-contents').html(''); // leave it blank before ajax call
+            $('#modal-loader').show();      // load ajax loader
+            
+            $.ajax({
+                url: '<?php echo base_url() ?>snc/view_report',
+                type: 'POST',
+                data: 'id='+uid ,
+                dataType: 'html'
+            })
+            .done(function(data){
+                console.log(data);  
+                $('#dynamic-contents').html('');    
+                $('#dynamic-contents').html(data); // load response 
+                $('#modal-loader').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+                $('#dynamic-contents').html('<i class="fa fa-edit"></i> Something went wrong, Please try again...');
+                $('#modal-loader').hide();
+            });
+            
+        });
+        
+    });
+    
+    </script> 
+    <!--END OF PLAYER SNC REPORT-->
+
+    
+    </body>
+    </html>
+   

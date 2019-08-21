@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	{% block jquery %}
+	var endpoint = 'data'
+
+	$.ajax({
+		method:"GET",
+		url: endpoint,
+		success: function(data){
+			console.log(data)
+			console.log(data.customer *100)
+		},
+		error: function(error_data){
+			console.log("error")
+			console.log(error_data)
+		}
+	})
+
+
+
+	{% endblock %}
+</script>

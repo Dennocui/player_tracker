@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block content%}
+{% include 'players/nav.html' %}
+
+<div class="right_col" role="main">
+<div class="x_content">
+    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+      <div class="profile_img">
+        <div id="crop-avatar">
+          <!-- Current avatar -->
+          <img class="img-responsive avatar-view" 
+           
+          {% if player.image %}
+          
+          src="{{ player.image.url }}"
+
+          {% endif %}
+
+          alt="{{ player.first_name }}" title="This is your picture">
+
+        </div>
+      </div>
+      <h3>{{ player }}</h3>
+
+      <ul class="list-unstyled user_data">
+        <li><i class="fa fa-map-marker user-profile-icon"></i><strong> Current Club:</strong> {{ player.club.name }}
+        </li>
+        
+        <li>
+          <i class="fa fa-briefcase user-profile-icon"> </i><strong> Age: </strong>{{ player.age }}  
+        </li>
+
+        <li class="m-top-xs">
+          <i class="fa fa-phone user-profile-icon"></i>  {{ player.phone_number }}
+          
+        </li>
+      </ul>
+
+      <a href="{% url 'players:edit_player' player.id %}" class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
+      
+   </div>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+
+     
+
+    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+      <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">General</a>
+        </li>
+        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Player Details</a>
+        </li>
+        <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Documents & Notes</a>
+        </li>
+      </ul>
+<div id="myTabContent" class="tab-content">
+<div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+
+            <!-- GENERAL PLAYER DETAILS STATUS NUMBER POSITION -->
+               <table class="data table table-striped no-margin">
+              <thead>
+                <tr>
+                  
+                  <th></th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  
+                  <td>Date Of Birth</td>
+                  <td>{{ player.date_of_birth }}</td>
+                </tr>
+                <tr>
+                  
+                  <td>Date Joined</td>
+                  <td>{{ player.created_at }}</td>
+                </tr>
+                <tr>
+                  
+                  <td>Playing Position</td>
+                  <td>{{ player.position.name }}</td>
+                </tr>
+                <tr>
+                  
+                  <td>Weight</td>
+                  <td>{{ player.weight }} Kgs</td>
+                </tr>
+
+                <tr>
+                  
+                  <td>Height</td>
+                  <td>{{ player.height }} Cms</td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+
+
+            
+            <!-- END GENERAL PLAYER DETAILS STATUS NUMBER POSITION -->
+
+</div>
+<div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+
+            <!-- start user projects -->
+            <table class="data table table-striped no-margin">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                   <td>ID/Passport No</td>
+                  <td></td>
+                </tr>
+                <tr>
+                   <td>Address</td>
+                  <td></td>
+                </tr>
+                <tr>
+                   <td>Address Contacts</td>
+                  <td></td>
+                </tr>
+                <tr>
+                   <td>Next Of Kin</td>
+                  <td>{{ player.kin }}</td>
+                </tr>
+                <tr>
+                   <td>Injury History</td>
+                  <td>{{ player.injury_history }}</td>
+                </tr>
+                <tr>
+                   <td>Player Allergies</td>
+                  <td>{{ player.allergy }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- end user projects -->
+
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+            <h3>Player Notes</h3>
+            <p>{{ player.about_player }}</p> 
+            <p>{{ player.skills }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}

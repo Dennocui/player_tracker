@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block content%}
+{% include 'players/nav.html' %}
+<div class="right_col" role="main">
+   
+        <div class="">
+            <div class="page-title">
+            <div class="title_left">
+            <h3>Register User <small></small></h3>
+        </div>
+                 
+        </div>
+        <br>
+      
+    <div class="row">
+      
+                <div class="x_panel">
+                    
+                       <div class="col-md-5 offset-sm-8">
+            
+
+  			<form action="" method="POST">
+				{% csrf_token %}
+				{% for field in form %}
+                 <div class="form-group">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                 </div>
+
+
+                {% endfor %}
+<hr>
+               <div class="form-actions right">
+  <a href="{% url 'players:settings' %}"  class="btn btn-primary">Cancel</a>
+  <button type="submit" class="btn btn-success" name="btn_save" value="Save">Save</button>
+</div>
+			</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+{% endblock %}

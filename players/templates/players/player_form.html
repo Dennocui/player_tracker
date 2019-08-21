@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content%}
+{% include 'players/nav.html' %}
+
+<div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Register Player</h3>
+            </div>
+           <hr>
+       
+        </div>
+          <div class="row">
+            <div class="col-md-11 ">
+              <div class="x_panel">
+                
+                <div class="x_content">
+                   
+<form class="horizontal-form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<div class="form-body">   
+<!--START OF PLAYER BIO DATA-->
+<h3 class="form-section"><u>Player Bio Data</u></h3>
+
+<div class="row">
+      <div class="col-md-4">
+          <div class="form-group">
+         {{ form.first_name }}
+          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+        {{ form.last_name }}
+          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+      </div>
+          
+       <div class="col-md-3">
+        <div class="form-group">
+        {{ form.weight }}
+          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+      </div>
+
+       <div class="col-md-3">
+        <div class="form-group">
+        {{ form.height }}
+          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+      </div>
+
+       <div class="col-md-4">
+        <div class="form-group">
+          <div class='input-group date' id='myDatepicker2'>
+            {{ form.date_of_birth }}
+              <span class="input-group-addon">
+                 <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-md-3">
+        <div class="form-group">
+        {{ form.id_number }}
+          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+        {{ form.address }}
+          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+        {{ form.address_contact }}
+          <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+      </div>
+     
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label>Player Allergies</label>
+    {{ form.allergy }}
+     
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label>Injury History</label>
+    
+    {{ form.injury_history }}
+  </div>
+</div>
+
+</div>
+<!--END OF PLAYER BIO DATA-->
+
+<!--START OF CONTACT DETAILS-->
+
+   <h3 class="form-section"><u> Contact Details</u></h3>
+
+   <div class="row">
+
+   <div class="col-md-3">
+    <div class="form-group">
+    {{ form.email }}
+      <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+    </div>
+  </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+      {{ form.phone_number }}
+      <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group">
+            {{ form.kin }}
+      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+  </div>
+</div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+            {{ form.kin_contact }}
+      <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+  </div>
+</div>
+</div>
+<!--END OF CONTACT DETAILS-->
+
+<h3 class="form-section"><u>Profile</u></h3>
+<div class="row">
+<!--START OF PLAYER DETAILS-->
+
+    <div class="col-md-6">
+      <div class="form-group">
+            <label>Position</label>
+            {{ form.position }}
+      </div>
+    </div>
+    
+
+    <div class="col-md-6">
+      <div class="form-group">
+            <label>Club</label>
+            {{ form.club }}
+    </div>
+  </div>
+</div>
+<!-- END OF PLAYER DETAILS-->
+
+<!--BEGINGN OF PLAYER PROFILE-->
+  
+
+
+
+<div class="col-md-6">
+<div class="form-group">
+        <label>High School</label>
+        {{ form.school }}
+    </div>
+  </div>
+
+<div class="col-md-6">
+<div class="form-group">
+        <label>Tertiary Institution</label>
+        {{ form.tertiary_institution }}
+      <span class="fa fa-bank form-control-feedback right" aria-hidden="true"></span>
+</div>
+</div>
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label>Player Skills</label>
+    
+    {{ form.skills }}
+  </div>
+</div>
+
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label>About Player</label>
+    {{ form.about_player }}
+  </div>
+</div>
+
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label>Image</label>
+    {{ form.image }}
+  </div>
+</div>
+
+</div>
+<!--END OF PLAYER PROFILE-->
+</div>
+
+
+                 
+
+<!--END OF FORM ROW-->
+<br>               
+                   
+<div class="form-actions right">
+  <a href="{% url 'players:players' %}"  class="btn btn-primary">Cancel</a>
+  <button type="submit" class="btn btn-success" name="btn_save" value="Save">Save</button>
+</div>
+                   
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+      
+
+{% endblock %}
